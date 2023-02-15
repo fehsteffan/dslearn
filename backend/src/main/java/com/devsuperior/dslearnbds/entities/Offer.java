@@ -36,6 +36,9 @@ public class Offer implements Serializable {
 	@JoinColumn(name= "course_id")
 	private Course course;
 	
+	@OneToMany(mappedBy = "offer")
+	private List<Topic> topic = new ArrayList<>();
+	
 	public Offer() {
 
 		
@@ -92,6 +95,10 @@ public class Offer implements Serializable {
 	
 	public List<Resource> getResources() {
 		return resources;
+	}
+	
+	public List<Topic> getTopic() {
+		return topic;
 	}
 
 	@Override
