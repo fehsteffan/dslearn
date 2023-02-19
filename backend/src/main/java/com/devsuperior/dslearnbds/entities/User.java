@@ -160,5 +160,15 @@ public class User implements UserDetails, Serializable {
 		return true;
 	}
 	
+	public boolean hasHole(String roleName) {
+		for(Role role : roles) {
+			if(role.getAuthoriry().equals(roleName)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	
 }
